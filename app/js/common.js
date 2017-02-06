@@ -1,5 +1,8 @@
-$(function() {
+$(document).ready(function() {
 
-	// Custom JS
+	$(".sl-header").slick({
+		arrows: false,
+		dots: false,
+	});
 
 });

@@ -33,13 +33,93 @@ body
 	font-size: 16px
 	min-width: 320px
 	position: relative
-	line-height: 1.75
+	line-height: 30px
 	font-family: $default-font
 	overflow-x: hidden
 
-.img-responsive
-	display: block
-	max-width: 100%
-	height: auto
 
-@import "media" // Всегда в конце
+// общие стили 
+a 
+	color: $accent-color
+	&:hover, &:focus, &:active
+		text-decoration: none
+
+ul, li 
+	list-style-type: none
+	margin: 0
+	padding: 0
+
+.logo
+	margin-bottom: 50px
+	display: block
+	span
+		font-size: 24px
+		color: #333
+		display: block
+		text-transform: uppercase
+		margin-bottom: 10px
+
+
+
+
+// стили для панели меню
+.left-panel
+	float: left
+	width: 214px
+	background-color: $menu-color
+	border-right: 1px solid #a7a7a7
+	padding: 60px 30px 35px
+
+	.menu
+		li 
+			border-bottom: 1px solid #a7a7a7
+			&:last-child
+				border-bottom: none
+			a 
+				text-transform: uppercase
+				color: #4c4c4c
+				opacity: .6
+				display: block
+				margin-bottom: 20px
+				margin-top: 25px
+				position: relative
+				padding-left: 20px
+				transition-property: opacity, padding
+				transition: ease-in-out 0.3s
+				font-family: "Exo 2", sans-serif
+				font-weight: 500
+				&::before
+					content: ""
+					position: absolute
+					width: 12px
+					height: 2px
+					background-color: $accent-color
+					top: calc(50% - 1px)
+					left: 0
+					transition: width ease-in-out 0.3s
+					opacity: .7
+				&:hover
+					padding-left: 36px
+					opacity: 1
+					&::before
+						width: 24px
+						opacity: 1
+		&--active
+			a 
+				opacity: 1
+
+
+
+// стили для панели контента
+.right-panel
+	float: right
+	width: calc(100% - 214px)
+	background-color: $gray-color
+	height: 100%
+
+	.main-header
+		min-height: 588px
+
+
+
+@import "media" 

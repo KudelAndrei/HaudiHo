@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+
+	//	слайдер шапки
 	$('.sl-header').slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
@@ -14,7 +16,6 @@ $(document).ready(function() {
 		dots: false,
 		focusOnSelect: true
 	});
-
 
 
 });

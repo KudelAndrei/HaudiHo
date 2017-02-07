@@ -438,6 +438,56 @@ a.link
 					color: $accent-color
 
 
+	// секция планов
+	.plan
+		padding-bottom: 40px
+		.plan-item
+			background-color: #FFF
+			padding: 50px 30px
+			text-align: center
+			transition: all ease-in-out 0.2s
+			margin-bottom: 40px
+			h3 
+				font-size: 24px
+				font-weight: 300
+				text-transform: uppercase
+				margin-top: 0
+				margin-bottom: 30px
+				text-align: left
+				span
+					color: $accent-color
+					font-weight: 700
+			p 
+				margin-bottom: 40px
+				opacity: .8
+				text-align: left
+			.line
+				li 
+					padding-bottom: 15px
+					padding-top: 10px
+					position: relative
+					&::before
+						position: absolute
+						content: ""
+						width: calc(100% + 60px)
+						height: 1px
+						background-color: #a7a7a7
+						left: -30px
+						bottom: 0
+					&:last-child
+						margin-bottom: 20px
+						&::before
+							display: none
+				p 
+					float: left
+					margin: 0
+				span 
+					float: right
+					text-transform: uppercase
+			&:hover
+				transform: translateY(-2px)
+				box-shadow: 0 10px 10px rgba(#666, .3)
+
 
 
 

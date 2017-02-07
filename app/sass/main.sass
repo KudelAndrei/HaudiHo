@@ -60,6 +60,22 @@ ul, li
 		margin-bottom: 10px
 
 
+a.link 
+	display: inline-block
+	padding: 5px
+	color: $accent-color
+	position: relative
+	&::before
+		position: absolute
+		content: ""
+		width: 50px
+		height: 2px
+		background-color: $accent-color
+		bottom: 0
+		transition: width ease-in-out 0.2s
+	&:hover
+		&::before
+			width: 100%
 
 
 // стили для панели меню
@@ -141,6 +157,7 @@ ul, li
 			&::before
 				width: 65px
 				height: 1px
+				box-shadow: 0px 0px 1px rgba($accent-color, 40%)
 			&::after
 				width: 5px
 				height: 5px
@@ -149,6 +166,31 @@ ul, li
 				bottom: -2px
 		
 		.sect-item
+			margin-bottom: 80px
+			&:hover
+				.sect-left, h3
+					color: $accent-color
+			.sect-left
+				float: left
+				width: 60px
+				font-size: 30px
+				transition: color ease-in-out 0.2s
+			.sect-right
+				display: inline-block
+				text-transform: uppercase
+				h3 
+					margin-top: 0
+					font-size: 24px
+					line-height: 24px
+					font-weight: 300
+					margin-bottom: 20px
+					transition: color ease-in-out 0.2s
+				p 
+					margin: 0 0 6px 0
+					line-height: 20px
+			p 
+				margin-top: 20px
+				margin-bottom: 0
 				
 	// секция header
 	.main-header
@@ -242,6 +284,161 @@ ul, li
 				background-color: lighten($accent-color, 20%)
 				position: relative
 				overflow: hidden 
-				
+	
+	// секция стажа
+	.experience
+		background-color: #FFF
+
+	// секция проект
+	.project
+		padding-bottom: 20px
+		.wrap-img
+			width: 100%
+			height: 294px
+			background-color: #ccc
+			position: relative
+			margin-bottom: 40px
+			box-shadow: 0 0 10px rgba(#ccc, 0.3)
+			cursor: pointer
+			transition: all ease-in-out 0.2s
+			img
+				max-width: 182px
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+			a 
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				z-index: 1
+				transform-origin: center center
+				transform: scale(0)
+				background-color: rgba(#fff, 0.85)
+				opacity: 0
+				transition: transform ease-in-out 0.3s
+				&::before, &::after
+					position: absolute
+					content: ""
+					background-color: $accent-color
+					width: 58px
+					height: 3px
+					top: 50%
+					left: 50%
+					transform: translate(-50%, -50%)
+				&::after
+					transform: rotate(90deg)
+					left: calc(50% - 29px)
+			&:hover
+				transform: translateY(-2px)
+				box-shadow: 0 10px 20px rgba(#ccc, 0.9)
+				a 
+					opacity: 1
+					transform: scale(1)
+
+		h3 
+			text-transform: uppercase
+			font-weight: 300
+		p 
+			margin-bottom: 80px
+
+	// секция поста
+	.post 
+		background-color: #FFF
+		position: relative
+
+		// стили навигации
+		.sl-post-nav 
+			margin-bottom: 65px
+			text-align: center
+			.slick-list
+				display: inline-block
+				width: calc(100% - 200px)
+			.post-nav 
+				display: inline-block
+				padding-bottom: 20px
+				position: relative
+				text-align: center
+				transition: color ease-in-out 0.3s
+				cursor: pointer
+				&::before
+					position: absolute
+					content: ""
+					width: 100%
+					height: 2px
+					background-color: $dark-color
+					bottom: 0
+					left: 0
+					transition: background-color ease-in-out 0.3s
+				&::after
+					content: ""
+					position: absolute
+					bottom: 0
+					left: 50%
+					transform: translateX(-50%)
+					border: 0 solid transparent
+					border-bottom: 0 solid $accent-color 
+					transition: border ease-in-out 0.3s
+				&.slick-current
+					color: $accent-color
+					&::before
+						background-color: $accent-color
+					&::after
+						border: 10px solid transparent
+						border-bottom: 10px solid $accent-color 
+
+		// стили слайдера
+		.sl-post
+			.img-wrap
+				width: 350px
+				height: 294px
+				background-color: #ccc
+				position: relative
+				margin-bottom: 40px
+				box-shadow: 0 0 10px rgba(#ccc, 0.3)
+				cursor: pointer
+				transition: all ease-in-out 0.2s
+				float: left
+				margin-right: 25px
+				img
+					max-width: 182px
+					position: absolute
+					top: 50%
+					left: 50%
+					transform: translate(-50%, -50%)
+			.post-content
+				font-weight: 300
+				h3 
+					text-transform: uppercase
+					font-size: 24px
+					margin-top: 10px
+					margin-bottom: 12px
+				p, time
+					margin-bottom: 35px
+					opacity: .8
+			.sl-post-arrow 
+				width: 50px
+				height: 50px
+				border-radius: 50%
+				border: 1px solid $dark-color
+				line-height: 50px
+				text-align: center
+				font-size: 24px
+				transition: all ease-in-out 0.2s
+				cursor: pointer
+				position: absolute
+				top: -104px
+				left: 0
+				&.sl-post-right
+					left: calc(100% - 50px)
+				&:hover
+					border: 1px solid $accent-color
+					color: $accent-color
+
+
+
+
 
 @import "media" 

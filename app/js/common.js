@@ -35,17 +35,19 @@ $(document).ready(function() {
 
 
 	// слайдер отзывов
-	
 	$('.sl-clients').slick({
-		centerMode: true,
-		centerPadding: '60px',
 		slidesToShow: 1,
+		slidesToScroll: 1,
+		asNavFor: '.sl-clients-nav',
+		focusOnSelect: true,
 	});
 	$('.sl-clients-nav').slick({
 		slidesToShow: 3,
-		slidesToScroll: 1,
+		centerMode: true,
+		centerPadding: "70px",
 		asNavFor: '.sl-clients',
 		focusOnSelect: true,
 	});
+	
 
 });

@@ -495,29 +495,41 @@ a.link
 		background-size: cover
 		background-position: center top
 		text-align: center
+		h2 
+			text-align: left
+			display: inherit
+		.slick-list
+			min-height: 180px
+		.slick-center
+			.wrap-img
+				transform: scale(1.2) translateY(-10px)
+				box-shadow: 0 10px 10px rgba(#000, 0.2)
 
-		.clients-nav
-			text-align: center
-			width: 150px
 		.wrap-img
+			margin-top: 30px
 			display: inline-block
 			width: 82px
-			height: 82px
 			padding: 10px
 			background-color: #ccc
 			position: relative
-			box-shadow: 0 0 10px rgba(#ccc, 0.3)
+			box-shadow: 0 0 10px 5px rgba(#ccc, 0.3)
 			cursor: pointer
 			transition: all ease-in-out 0.2s
-			float: left
+			text-align: center
 			img
-				max-width: 182px
-				width: 90%
-				position: absolute
-				top: 50%
-				left: 50%
-				transform: translate(-50%, -50%)
-
+				width: 100%
+				display: inline-block
+		.sl-clients__slider
+			h3 
+				font-size: 24px
+				text-transform: uppercase
+				margin-top: 0
+				margin-bottom: 15px
+			span 
+				margin-bottom: 30px
+				display: block
+				em 
+					color: $accent-color
 
 
 @import "media" 

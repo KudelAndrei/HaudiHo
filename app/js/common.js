@@ -49,5 +49,11 @@ $(document).ready(function() {
 		focusOnSelect: true,
 	});
 	
+	$("#select").click(function(){
+		$(this).toggleClass("active");
+		$(".select-item").click(function(){
+
+		});
+	});
 
 });

@@ -531,5 +531,81 @@ a.link
 				em 
 					color: $accent-color
 
+	// секция обратной связи
+	.say
+		
+		.say-items
+			li 
+				margin-bottom: 90px
+				>i 
+					font-size: 48px
+					display: inline-block
+					float: left
+					margin-right: 25px
+				>h3 
+					display: inline-block
+					font-size: 24px
+					text-transform: uppercase
+					margin: 0
+					margin-top: 16px
+				>p 
+					margin-bottom: 0
+					line-height: 20px
+
+		.soc 
+			li 
+				display: inline-block
+				margin-right: 40px
+				>a 
+					font-size: 30px
+					color: $dark-color
+					display: inline-block
+					transition: color ease-in-out 200ms
+					&:hover
+						color: $accent-color
+				&:last-child
+					margin-right: 0
+
+		.form 
+			>input, textarea
+				background-color: transparent
+				border: none 
+				border-bottom: 1px solid #a7a7a7
+				display: inline-block
+				margin-bottom: 40px
+				width: 100%
+				padding-bottom: 10px
+			>textarea
+				resize: none
+			.select
+				display: inline-block
+				width: 100%
+				border-bottom: 1px solid #a7a7a7
+				margin-bottom: 40px
+				position: relative
+				padding-bottom: 10px
+				color: #666
+				cursor: pointer
+				&:hover
+					i
+						color: $accent-color
+				>i
+					position: absolute
+					color: #a7a7a7
+					right: 20px
+					cursor: pointer
+					font-size: 26px
+				&.active
+					.select-item 
+						display: block
+				.select-item
+					display: none
+					position: absolute
+					top: 0
+					left: 0
+					width: 100%
+
+
+
 
 @import "media" 

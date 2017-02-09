@@ -77,6 +77,9 @@ a.link
 		&::before
 			width: 100%
 
+.center 
+	text-align: center
+	display: block
 
 // стили для панели меню
 .left-panel
@@ -139,6 +142,13 @@ a.link
 	.sect 
 		padding-top: 90px
 		padding-bottom: 90px
+		&:hover
+			.sect-head
+				&::before
+					width: 100%
+				&::after
+					left: 100%
+					
 		&-head 
 			font-size: 30px
 			text-transform: uppercase
@@ -154,6 +164,7 @@ a.link
 				bottom: 0
 				left: 0
 				background-color: $accent-color
+				transition: all ease-in-out 0.3s
 			&::before
 				width: 65px
 				height: 1px
@@ -161,6 +172,8 @@ a.link
 			&::after
 				width: 5px
 				height: 5px
+				background-color: transparent
+				border: 1px solid $accent-color
 				border-radius: 50%
 				left: 65px
 				bottom: -2px
@@ -445,7 +458,7 @@ a.link
 			background-color: #FFF
 			padding: 50px 30px
 			text-align: center
-			transition: all ease-in-out 0.2s
+			transition: box-shadow ease-in-out 0.3s
 			margin-bottom: 40px
 			h3 
 				font-size: 24px
@@ -485,7 +498,6 @@ a.link
 					float: right
 					text-transform: uppercase
 			&:hover
-				transform: translateY(-2px)
 				box-shadow: 0 10px 10px rgba(#666, .3)
 
 	// секция клиенты
@@ -497,7 +509,8 @@ a.link
 		text-align: center
 		h2 
 			text-align: left
-			display: inherit
+			display: inline-block
+			float: left
 		.slick-list
 			min-height: 180px
 		.slick-center
@@ -603,6 +616,7 @@ a.link
 					right: 20px
 					cursor: pointer
 					font-size: 26px
+					transition: transform ease-in-out 0.2s
 				&.active
 					box-shadow: 0 0 1px 1px rgba($accent-color, 0.9)
 					transition: box-shadow ease-in-out 0.5s
@@ -613,6 +627,7 @@ a.link
 					top: 100%
 					width: calc(100% + 3px)
 					left: -1px
+					
 					>li 
 						padding: 5px 15px
 						border-bottom: 1px solid rgba($accent-color, 0.9)

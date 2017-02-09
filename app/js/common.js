@@ -59,9 +59,18 @@ $(document).ready(function() {
 			$(".select-item li").click(function(){
 				liText = $(this).text();
 				$("#select span").text(liText);
-				$("#select").addClass("sel");
+				$("#select i").css({'transform': 'rotate(90deg)', 'color': '#3971ff'});
 			});
 
 	});
+
+	$(".menu ul li").on("click","a", function (event) {
+		event.preventDefault();
+		var id  = $(this).attr('href'),
+		top = $(id).offset().top;
+		$('body,html').animate({scrollTop: top}, 1000);
+ });
+
+
 
 });

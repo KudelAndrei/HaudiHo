@@ -50,10 +50,18 @@ $(document).ready(function() {
 	});
 	
 	$("#select").click(function(){
-		$(this).toggleClass("active");
-		$(".select-item").click(function(){
+		$(".select-item").slideToggle(
+			function(){
+				$("#select").toggleClass('active');
+				$(".select-item li").fadeIn();
+				return false;
+			});
+			$(".select-item li").click(function(){
+				liText = $(this).text();
+				$("#select span").text(liText);
+				$("#select").addClass("sel");
+			});
 
-		});
 	});
 
 });

@@ -536,7 +536,7 @@ a.link
 		
 		.say-items
 			li 
-				margin-bottom: 90px
+				margin-bottom: 110px
 				>i 
 					font-size: 48px
 					display: inline-block
@@ -551,6 +551,10 @@ a.link
 				>p 
 					margin-bottom: 0
 					line-height: 20px
+					>a 
+						color: $dark-color
+						&:hover
+							color: $accent-color
 
 		.soc 
 			li 
@@ -572,9 +576,12 @@ a.link
 				border: none 
 				border-bottom: 1px solid #a7a7a7
 				display: inline-block
-				margin-bottom: 40px
+				margin-bottom: 30px
 				width: 100%
 				padding-bottom: 10px
+				padding-left: 10px
+				&:focus
+					border-bottom: 1px solid $accent-color
 			>textarea
 				resize: none
 			.select
@@ -586,6 +593,7 @@ a.link
 				padding-bottom: 10px
 				color: #666
 				cursor: pointer
+				padding: 10px
 				&:hover
 					i
 						color: $accent-color
@@ -596,14 +604,39 @@ a.link
 					cursor: pointer
 					font-size: 26px
 				&.active
-					.select-item 
-						display: block
+					box-shadow: 0 0 1px 1px rgba($accent-color, 0.9)
+					transition: box-shadow ease-in-out 0.5s
 				.select-item
 					display: none
 					position: absolute
-					top: 0
 					left: 0
-					width: 100%
+					top: 100%
+					width: calc(100% + 3px)
+					left: -1px
+					>li 
+						padding: 5px 15px
+						border-bottom: 1px solid rgba($accent-color, 0.9)
+						background-color: rgba($accent-color, .8)
+						color: #fff
+						&:hover
+							background-color: rgba($accent-color, .9)
+			button.link
+				border: none 
+				background-color: transparent 
+				color: $accent-color
+				display: inline-block
+				padding-bottom: 8px
+				&::before
+					position: absolute
+					content: ""
+					width: 50px
+					height: 2px
+					background-color: $accent-color
+					bottom: 0
+					transition: width ease-in-out 0.2s
+				&:hover
+					&::before
+						width: 120px
 
 
 

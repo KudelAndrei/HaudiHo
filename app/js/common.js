@@ -58,7 +58,7 @@ $(document).ready(function() {
 			});
 			$(".select-item li").click(function(){
 				liText = $(this).text();
-				$("#select span").text(liText);
+				$("#select span").text(liText).css({'color':'#666'});
 				$("#select i").css({'transform': 'rotate(90deg)', 'color': '#3971ff'});
 				$("#select").css({'border-bottom': '1px solid #3971ff'});
 			});
@@ -84,7 +84,7 @@ $(document).ready(function() {
 			$(".menu li").siblings().removeClass("menu-active");
 			$(".menu li a[href*=skills]").parent().addClass("menu-active");
 		}
-		
+
 		else {
 			$(".menu li").siblings().removeClass("menu-active");
 		}

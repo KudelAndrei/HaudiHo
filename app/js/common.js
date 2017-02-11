@@ -60,17 +60,66 @@ $(document).ready(function() {
 				liText = $(this).text();
 				$("#select span").text(liText);
 				$("#select i").css({'transform': 'rotate(90deg)', 'color': '#3971ff'});
+				$("#select").css({'border-bottom': '1px solid #3971ff'});
 			});
 
 	});
 
-	$(".menu ul li").on("click","a", function (event) {
+	$(".menu").on("click","a", function (event) {
 		event.preventDefault();
 		var id  = $(this).attr('href'),
 		top = $(id).offset().top;
 		$('body,html').animate({scrollTop: top}, 1000);
- });
+ 	});
+
+	$(".menu li").click(function(){
+		$(this).siblings().removeClass("menu-active");
+		$(this).addClass("menu-active");
+	});
+
+	$(window).scroll(function(){
+		var topScroll = $(this).scrollTop() + 100;
+
+		if ( topScroll > $("#skills").offset().top ||  topScroll > $("#skills").offset().top + $(window).height()/2 ){
+			$(".menu li").siblings().removeClass("menu-active");
+			$(".menu li a[href*=skills]").parent().addClass("menu-active");
+		}
+		
+		else {
+			$(".menu li").siblings().removeClass("menu-active");
+		}
+
+		if ( topScroll > $("#education").offset().top ||  topScroll > $("#education").offset().top + $(window).height()/2 ){
+			$(".menu li").siblings().removeClass("menu-active");
+			$(".menu li a[href*=education]").parent().addClass("menu-active");
+		}
+
+		if ( topScroll > $("#experience").offset().top ||  topScroll > $("#experience").offset().top + $(window).height()/2 ){
+			$(".menu li").siblings().removeClass("menu-active");
+			$(".menu li a[href*=experience]").parent().addClass("menu-active");
+		}
+
+		if ( topScroll > $("#project").offset().top ||  topScroll > $("#project").offset().top + $(window).height()/2 ){
+			$(".menu li").siblings().removeClass("menu-active");
+			$(".menu li a[href*=project]").parent().addClass("menu-active");
+		}
+
+		if ( topScroll > $("#post").offset().top ||  topScroll > $("#post").offset().top + $(window).height()/2 ){
+			$(".menu li").siblings().removeClass("menu-active");
+			$(".menu li a[href*=post]").parent().addClass("menu-active");
+		}
+
+		if ( topScroll > $("#cletnts").offset().top ||  topScroll > $("#cletnts").offset().top + $(window).height()/2 ){
+			$(".menu li").siblings().removeClass("menu-active");
+			$(".menu li a[href*=cletnts]").parent().addClass("menu-active");
+		}
+
+		if ( topScroll > $("#say").offset().top ||  topScroll > $("#say").offset().top + $(window).height()/2 ){
+			$(".menu li").siblings().removeClass("menu-active");
+			$(".menu li a[href*=say]").parent().addClass("menu-active");
+		}
 
 
+	});
 
 });

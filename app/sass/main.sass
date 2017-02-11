@@ -49,6 +49,12 @@ ul, li
 	margin: 0
 	padding: 0
 
+.before
+	position: absolute
+	content: ''
+	background-color: $accent-color
+	left: 0
+
 .logo
 	margin-bottom: 50px
 	display: block
@@ -109,13 +115,10 @@ a.link
 				font-family: "Exo 2", sans-serif
 				font-weight: 500
 				&::before
-					content: ""
-					position: absolute
+					@extend .before
 					width: 12px
 					height: 2px
-					background-color: $accent-color
 					top: calc(50% - 1px)
-					left: 0
 					transition: width ease-in-out 0.3s
 					opacity: .7
 				&:hover
@@ -124,10 +127,13 @@ a.link
 					&::before
 						width: 24px
 						opacity: 1
-		&--active
+		.menu-active
 			a 
+				padding-left: 36px
 				opacity: 1
-
+				&::before
+					width: 24px
+					opacity: 1
 
 
 // стили для панели контента
@@ -159,11 +165,8 @@ a.link
 			margin-bottom: 80px
 			&::after,
 			&::before
-				position: absolute
-				content: ""
+				@extend .before
 				bottom: 0
-				left: 0
-				background-color: $accent-color
 				transition: all ease-in-out 0.3s
 			&::before
 				width: 65px
@@ -210,7 +213,7 @@ a.link
 		min-height: 588px
 		background-image: url("../img/img.png")
 		background-repeat: no-repeat
-		background-position: 50px 146px
+		background-position: 50px 128px
 
 		.sl-header
 			margin-top: 80px
@@ -239,11 +242,9 @@ a.link
 					margin-top: 0
 					margin-bottom: 30px
 					&::before, &::after
-						position: absolute
-						content: ""
+						@extend .before
 						width: calc(100% + 40px)
 						height: 1px
-						background-color: $dark-color
 						top: 0
 						left: -20px
 					&::after
@@ -260,13 +261,11 @@ a.link
 					margin-right: 30px
 					transition: color ease-in-out 0.3s
 					&::before
-						position: absolute
-						content: ""
+						@extend .before
 						bottom: 0	
 						width: 50px
 						height: 2px
 						z-index: 1
-						background-color: $accent-color
 						transition: width ease-in-out 0.3s
 					&:hover, &.slick-current
 						color: $accent-color
@@ -313,7 +312,7 @@ a.link
 			margin-bottom: 40px
 			box-shadow: 0 0 10px rgba(#ccc, 0.3)
 			cursor: pointer
-			transition: all ease-in-out 0.2s
+			transition: box-shadow ease-in-out 0.2s
 			img
 				max-width: 182px
 				position: absolute
@@ -333,9 +332,7 @@ a.link
 				opacity: 0
 				transition: transform ease-in-out 0.3s
 				&::before, &::after
-					position: absolute
-					content: ""
-					background-color: $accent-color
+					@extend .before
 					width: 58px
 					height: 3px
 					top: 50%
@@ -345,7 +342,6 @@ a.link
 					transform: rotate(90deg)
 					left: calc(50% - 29px)
 			&:hover
-				transform: translateY(-2px)
 				box-shadow: 0 10px 20px rgba(#ccc, 0.9)
 				a 
 					opacity: 1
@@ -377,22 +373,19 @@ a.link
 				transition: color ease-in-out 0.3s
 				cursor: pointer
 				&::before
-					position: absolute
-					content: ""
+					@extend .before
 					width: 100%
 					height: 2px
-					background-color: $dark-color
 					bottom: 0
-					left: 0
+					background-color: $dark-color
 					transition: background-color ease-in-out 0.3s
 				&::after
-					content: ""
 					position: absolute
+					content: ""
 					bottom: 0
 					left: 50%
 					transform: translateX(-50%)
 					border: 0 solid transparent
-					border-bottom: 0 solid $accent-color 
 					transition: border ease-in-out 0.3s
 				&.slick-current
 					color: $accent-color
@@ -480,8 +473,7 @@ a.link
 					padding-top: 10px
 					position: relative
 					&::before
-						position: absolute
-						content: ""
+						@extend .before
 						width: calc(100% + 60px)
 						height: 1px
 						background-color: #a7a7a7
@@ -548,13 +540,18 @@ a.link
 	.say
 		
 		.say-items
+			&:hover
+				li 
+					i 
+						color: $accent-color
 			li 
-				margin-bottom: 110px
+				margin-bottom: 100px
 				>i 
 					font-size: 48px
 					display: inline-block
 					float: left
 					margin-right: 25px
+					transition: color ease-in-out 0.2s
 				>h3 
 					display: inline-block
 					font-size: 24px
@@ -593,7 +590,7 @@ a.link
 				width: 100%
 				padding-bottom: 10px
 				padding-left: 10px
-				&:focus
+				&:focus, &:required:valid
 					border-bottom: 1px solid $accent-color
 			>textarea
 				resize: none
@@ -641,12 +638,11 @@ a.link
 				color: $accent-color
 				display: inline-block
 				padding-bottom: 8px
+				position: relative
 				&::before
-					position: absolute
-					content: ""
+					@extend .before
 					width: 50px
 					height: 2px
-					background-color: $accent-color
 					bottom: 0
 					transition: width ease-in-out 0.2s
 				&:hover

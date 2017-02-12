@@ -104,6 +104,19 @@ a.link
 	padding: 60px 30px 35px
 	height: 100vh
 	position: fixed
+	transition: all ease 0.4s
+	z-index: 100
+	&.active
+		transform: translateX(214px)
+		.toggle-menu
+			span 
+				transform: rotate(45deg)
+				top: 40px
+				&::before
+					opacity: 0
+				&::after
+					transform: rotate(-90deg)
+					top: 0
 	.menu
 		li 
 			border-bottom: 1px solid #a7a7a7
@@ -143,7 +156,35 @@ a.link
 				&::before
 					width: 24px
 					opacity: 1
-
+	.toggle-menu
+		position: absolute
+		display: none
+		top: 0
+		right: -40px
+		width: 40px
+		background-color: $accent-color
+		height: 100vh
+		cursor: pointer
+		z-index: 10
+		span
+			position: relative
+			display: block
+			top: 30px
+			width: 30px
+			height: 2px
+			left: 5px
+			background-color: #FFF
+			transition: all ease 0.4s
+			&::before, &::after
+				@extend .before
+				background-color: #FFF
+				width: 30px
+				height: 2px
+				top: 10px
+				transition: all ease 0.4s
+			&::after
+				top: 20px
+		
 
 // стили для панели контента
 .right-panel

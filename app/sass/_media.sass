@@ -10,19 +10,23 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
+	
+	.left-panel
+		left: -213px
+		.toggle-menu 
+			display: block
+
 	.right-panel
-		width: 100%
+		width: calc(100% - 40px)
 		.sect
 			padding: 40px 0
-			
-	.form
-		margin-bottom: 44px
-	.right-panel 
 		.say 
 			.say-items li
 				margin-bottom: 40px
 				display: inline-block
-
+		.form
+			margin-bottom: 44px
+		
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)

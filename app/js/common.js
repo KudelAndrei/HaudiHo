@@ -77,6 +77,20 @@ $(document).ready(function() {
 		$(this).addClass("menu-active");
 	});
 
+	$(".toggle-menu").click(function(){
+		$(".left-panel").toggleClass("active");
+		$(".menu ul li a").click(function(){
+			$(this).parents(".left-panel").removeClass("active");
+			$(".right-panel").click(function(){
+				$(this).siblings().removeClass("active");
+			});
+		});
+	});
+
+	$(window).resize(function(){
+		$(".left-panel").removeClass("active");
+	});
+
 	$(window).scroll(function(){
 		var topScroll = $(this).scrollTop() + 100;
 

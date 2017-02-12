@@ -5,7 +5,10 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
-	/**/
+	.right-panel
+		.main-header
+			.sl-header
+				background-image: none
 
 
 /* Medium Devices, Desktops */
@@ -13,29 +16,104 @@
 	
 	.left-panel
 		left: -213px
+		padding: 26px 15px 35px
 		.toggle-menu 
 			display: block
+		.logo
+			margin-bottom: 25px
 
 	.right-panel
 		width: calc(100% - 40px)
 		.sect
 			padding: 40px 0
+			.sect-head
+				margin: 10px 0 40px
+				line-height: 38px
+		.skills-item
+			margin-bottom: 20px
 		.say 
 			.say-items li
 				margin-bottom: 40px
 				display: inline-block
 		.form
 			margin-bottom: 44px
-		
+		.main-header
+			.sl-header
+				margin-top: 0
+				padding-left: 0
+				h1 
+					line-height: 46px
+					margin-top: 16px
+					p 
+						margin-bottom: 0
+			.sl-header-nav
+				.sl-nav__head
+					left: 0
+					margin-right: 15px
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-	/**/
+	.right-panel
+		.post 
+			.sl-post-nav
+				margin-top: 48px
+
 
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-	/**/
+	.left-panel
+		padding: 10px 15px 35px
+		.logo
+			margin-bottom: 10px
+			span
+				margin-bottom: 0
+		.menu
+			li 
+				a 
+					margin: 0
+					padding: 8px 30px
+
+
+	.right-panel
+		p 
+			line-height: 26px
+		.sect
+			padding: 25px 0
+			.sect-item
+				margin-bottom: 40px
+				.sect-left
+					margin-bottom: 12px
+				p 
+					margin-top: 15px
+
+		.main-header 
+			.sl-header__slider h3
+				margin-bottom: 8px
+			.slick-track
+				width: 100%
+				.sl-nav__head
+					min-width: 100px
+					margin-right: 0px
+					margin-bottom: 10px
+
+		.project
+			.wrap-img
+				margin-bottom: 15px
+			p 
+				margin-bottom: 50px
+
+		.clients 
+			.wrap-img
+				width: 70px
+				margin-top: 15px
+			.slick-list
+				min-height: 120px
+		
+		.post
+			.sl-post-nav
+				margin-top: 10px
+				margin-bottom: 30px
 
 
 /* Custom, iPhone Retina */

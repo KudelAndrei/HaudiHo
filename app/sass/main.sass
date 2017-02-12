@@ -261,7 +261,6 @@ a.link
 				
 	// секция header
 	.main-header
-		min-height: 588px
 		background-image: url("../img/img.png")
 		background-repeat: no-repeat
 		background-position: 110px 128px
@@ -308,6 +307,7 @@ a.link
 					opacity: 0.8
 
 			&-nav 
+				margin-bottom: 50px
 				.sl-nav__head
 					text-transform: uppercase
 					position: relative
@@ -436,6 +436,30 @@ a.link
 			.slick-list
 				display: inline-block
 				width: calc(100% - 200px)
+			.sl-post-arrow 
+				width: 50px
+				height: 50px
+				border-radius: 50%
+				border: 2px solid $dark-color
+				line-height: 50px
+				text-align: center
+				font-size: 24px
+				transition: all ease-in-out 0.2s
+				cursor: pointer
+				position: absolute
+				top: 4px
+				left: 0
+				&.sl-post-right
+					left: calc(100% - 50px)
+				i 
+					line-height: 48px
+					position: absolute
+					top: 0
+					left: calc(50% - 5px)
+				&:hover
+					border: 2px solid $accent-color
+					color: $accent-color
+
 			.post-nav 
 				display: inline-block
 				padding-bottom: 20px
@@ -469,8 +493,9 @@ a.link
 		// стили слайдера
 		.sl-post
 			.img-wrap
-				width: 350px
-				height: 294px
+				max-width: 350px
+				min-height: 250px
+				min-width: 250px
 				background-color: #ccc
 				position: relative
 				margin-bottom: 40px
@@ -495,30 +520,7 @@ a.link
 				p, time
 					margin-bottom: 35px
 					opacity: .8
-			.sl-post-arrow 
-				width: 50px
-				height: 50px
-				border-radius: 50%
-				border: 2px solid $dark-color
-				line-height: 50px
-				text-align: center
-				font-size: 24px
-				transition: all ease-in-out 0.2s
-				cursor: pointer
-				position: absolute
-				top: -104px
-				left: 0
-				&.sl-post-right
-					left: calc(100% - 50px)
-				i 
-					line-height: 48px
-					position: absolute
-					top: 0
-					left: calc(50% - 5px)
-				&:hover
-					border: 2px solid $accent-color
-					color: $accent-color
-
+			
 
 	// секция планов
 	.plan
@@ -594,7 +596,7 @@ a.link
 			padding: 10px
 			background-color: #ccc
 			position: relative
-			box-shadow: 0 0 10px 5px rgba(#ccc, 0.3)
+			box-shadow: 0 0 5px 3px rgba(#ccc, 0.3)
 			cursor: pointer
 			transition: all ease-in-out 0.2s
 			text-align: center

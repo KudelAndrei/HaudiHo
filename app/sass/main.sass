@@ -356,9 +356,17 @@ a.link
 				background: lighten($accent-color, 25%)
 				position: relative
 				overflow: hidden 
+			progress[value]-moz-progress-bar
+				background-color: lighten($accent-color, 25%)
+			progress[value]-webkit-progress-bar
+				background-color: lighten($accent-color, 25%)
+			progress[value]-ms-progress-bar
+				background-color: lighten($accent-color, 25%)
 			progress::-moz-progress-bar
 				background-color: rgba($accent-color, .8)
 			progress::-webkit-progress-bar
+				background-color: rgba($accent-color, .8)
+			progress::-ms-progress-bar
 				background-color: rgba($accent-color, .8)
 
 	// стили адукации
@@ -531,6 +539,7 @@ a.link
 			text-align: center
 			transition: box-shadow ease-in-out 0.3s
 			margin-bottom: 40px
+			max-width: 550px
 			h3 
 				font-size: 24px
 				font-weight: 300
@@ -622,6 +631,7 @@ a.link
 		.say-items
 			li 
 				margin-bottom: 100px
+				vertical-align: top
 				&:hover
 					>i 
 						color: $accent-color

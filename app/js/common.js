@@ -106,11 +106,14 @@ $(document).ready(function() {
 
 	$(".toggle-menu").click(function(){
 		$(".left-panel").toggleClass("active");
+		$(".logo").click(function(){
+			$(this).parents(".left-panel").removeClass("active");
+		});
 		$(".menu ul li a").click(function(){
 			$(this).parents(".left-panel").removeClass("active");
-			$(".right-panel").click(function(){
-				$(this).siblings().removeClass("active");
-			});
+		});
+		$(".right-panel").click(function(){
+			$(this).siblings().removeClass("active");
 		});
 	});
 

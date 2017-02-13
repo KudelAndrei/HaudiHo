@@ -35,6 +35,7 @@
 			.say-items li
 				margin-bottom: 40px
 				display: inline-block
+				margin-right: 20px
 		.form
 			margin-bottom: 44px
 		.main-header
@@ -50,13 +51,30 @@
 				.sl-nav__head
 					left: 0
 					margin-right: 15px
+		.post 
+			.sl-post
+				.post-content
+					p
+						margin-bottom: 10px	
+					time
+						margin-bottom: 15px
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
 	.right-panel
 		.post 
 			.sl-post-nav
-				margin-top: 48px
+				margin-top: 10px
+				margin-bottom: 50px
+			.sl-post	
+				.img-wrap
+					float: none
+		.say 
+			.form
+				button.link 
+					float: right
+			.soc
+				text-align: center
 
 
 
@@ -109,12 +127,17 @@
 				margin-top: 15px
 			.slick-list
 				min-height: 120px
+
+		.plan 
+			.plan-item
+				padding: 25px 15px
 		
 		.post
 			.sl-post-nav
 				margin-top: 10px
 				margin-bottom: 30px
-
+				.slick-list
+					width: calc(100% - 120px)
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
